@@ -3,7 +3,7 @@
  * Plugin Name: AH Arabic Translation
  * Plugin URI:  https://github.com/alibh86/AH-Arabic-translation-Plugin-
  * Description: Complete Arabic/English bilingual support for AH Brands. /ar/ subdirectory URLs, RTL layout, Yoast/Schema/Sitemap integration, auto-translation (Claude/DeepL/Google/MyMemory), WooCommerce order language lock, brand-name glossary, and organic Arabic SEO.
- * Version:     2.0.5
+ * Version:     2.0.6
  * Author:      AH Brands
  * Author URI:  https://www.ahbrandsbh.com
  * Text Domain: ah-arabic
@@ -25,7 +25,10 @@ defined( 'ABSPATH' ) || exit;
     if ( defined( 'AH_LANG_FROM_URL' ) ) return;
 
     $request  = isset( $_SERVER['REQUEST_URI'] ) ? $_SERVER['REQUEST_URI'] : '/';
-    $home     = rtrim( (string) parse_url( get_option( 'home', '' ), PHP_URL_PATH ), '/' );
+    // Use SCRIPT_NAME for reliable base-path detection without a DB round-trip.
+    $script   = isset( $_SERVER['SCRIPT_NAME'] ) ? (string) $_SERVER['SCRIPT_NAME'] : '/index.php';
+    $base_dir = dirname( $script );
+    $home     = strlen( $base_dir ) > 1 ? rtrim( $base_dir, '/' ) : '';
     $path     = (string) parse_url( $request, PHP_URL_PATH );
     $rel      = $home !== '' ? (string) substr( $path, strlen( $home ) ) : $path;
 
@@ -41,7 +44,7 @@ defined( 'ABSPATH' ) || exit;
 })();
 
 // ── Constants ─────────────────────────────────────────────────────────────────
-define( 'AH_ARABIC_VERSION',  '2.0.5' );
+define( 'AH_ARABIC_VERSION',  '2.0.6' );
 define( 'AH_ARABIC_FILE',     __FILE__ );
 define( 'AH_ARABIC_DIR',      plugin_dir_path( __FILE__ ) );
 define( 'AH_ARABIC_URL',      plugin_dir_url( __FILE__ ) );
