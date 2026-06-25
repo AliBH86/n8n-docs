@@ -1,0 +1,116 @@
+/* AH Arabic — Language Switcher Styles */
+
+.ah-lang-switcher {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    user-select: none;
+}
+
+.ah-lang-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-decoration: none !important;
+    color: inherit;
+    transition: background 0.15s, color 0.15s, opacity 0.15s;
+    white-space: nowrap;
+}
+
+.ah-lang-item:hover {
+    opacity: 0.8;
+    text-decoration: none !important;
+}
+
+.ah-lang-active {
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.ah-lang-flag {
+    font-size: 16px;
+    line-height: 1;
+}
+
+/* ── Header style ──────────────────────────────── */
+.ah-switcher-header .ah-lang-item,
+.ah-switcher-minimal .ah-lang-item {
+    color: #ffffff !important;
+    padding: 4px 8px;
+}
+.ah-switcher-header .ah-lang-active,
+.ah-switcher-minimal .ah-lang-active {
+    color: #C9A84C !important;
+}
+.ah-switcher-header .ah-lang-item:hover,
+.ah-switcher-minimal .ah-lang-item:hover {
+    color: #C9A84C !important;
+    opacity: 1;
+}
+
+/* Divider between items */
+.ah-lang-switcher .ah-lang-item + .ah-lang-item::before {
+    content: '|';
+    opacity: 0.4;
+    margin-right: 0;
+    margin-left: -4px;
+    pointer-events: none;
+    color: #fff;
+}
+
+/* ── Widget style ──────────────────────────────── */
+.ah-switcher-widget {
+    padding: 8px 0;
+}
+.ah-switcher-widget .ah-lang-item {
+    display: flex;
+    justify-content: flex-start;
+    padding: 6px 12px;
+    border-radius: 6px;
+}
+
+/* ── Floating button ───────────────────────────── */
+.ah-switcher-floating {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    z-index: 9999;
+    background: #540754;
+    border-radius: 50px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+    padding: 6px 4px;
+    flex-direction: column;
+    gap: 2px;
+}
+.ah-switcher-floating .ah-lang-item {
+    color: #fff !important;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.ah-switcher-floating .ah-lang-active {
+    background: rgba(255,255,255,0.2);
+    color: #C9A84C !important;
+}
+.ah-switcher-floating .ah-lang-item + .ah-lang-item::before {
+    display: none;
+}
+
+/* RTL — mirror floating position */
+body.ah-rtl .ah-switcher-floating {
+    left: auto;
+    right: 24px;
+}
+
+/* ── Responsive ────────────────────────────────── */
+@media (max-width: 768px) {
+    .ah-switcher-header .ah-lang-flag { font-size: 14px; }
+    .ah-switcher-header .ah-lang-label { font-size: 11px; }
+}
