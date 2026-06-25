@@ -138,7 +138,7 @@ This agent supports the following chat models:
     * [Webflow](/integrations/builtin/app-nodes/n8n-nodes-base.webflow.md)
     * [Wikipedia](/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.toolwikipedia.md)
     * [Wolfram|Alpha](/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.toolwolframalpha.md)
-    * [WooCommerce](/integrations/builtin/app-nodes/n8n-nodes-base.woocommerce.md)
+    * [WooCommerce](/integrations/builtin/app-nodes/n8n-nodes-base.woocommerce/index.md)
     * [Wordpress](/integrations/builtin/app-nodes/n8n-nodes-base.wordpress.md)
     * [X (Formerly Twitter)](/integrations/builtin/app-nodes/n8n-nodes-base.twitter.md)
     * [YouTube](/integrations/builtin/app-nodes/n8n-nodes-base.youtube.md)

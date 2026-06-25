@@ -9,7 +9,7 @@ priority: medium
 
 You can use these credentials to authenticate the following nodes:
 
-- [WooCommerce](/integrations/builtin/app-nodes/n8n-nodes-base.woocommerce.md)
+- [WooCommerce](/integrations/builtin/app-nodes/n8n-nodes-base.woocommerce/index.md)
 - [WooCommerce Trigger](/integrations/builtin/trigger-nodes/n8n-nodes-base.woocommercetrigger.md)
 
 ## Prerequisites
